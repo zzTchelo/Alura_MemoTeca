@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateThoughtComponent } from './component/thought/create-thought/create-thought.component';
 import { ThoughtListComponent } from './component/thought/thought-list/thought-list.component';
 import { DeleteThoughtComponent } from './component/thought/delete-thought/delete-thought.component';
+import { UpdateThoughtComponent } from './component/thought/update-thought/update-thought.component';
 
 const routes: Routes = [
   { path: 'NovoPensamento', component: CreateThoughtComponent },
   { path: 'ListaPensamentos', component: ThoughtListComponent },
   { path: 'Pensamento/ExcluirPensamento/:id', component: DeleteThoughtComponent },
+  { path: 'Pensamento/EditarPensamento/:id', component: UpdateThoughtComponent },
   { path: '', redirectTo: 'ListaPensamentos', pathMatch: 'full' }
 ];
 

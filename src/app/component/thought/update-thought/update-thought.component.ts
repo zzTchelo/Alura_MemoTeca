@@ -31,11 +31,13 @@ export class UpdateThoughtComponent {
   }
 
   UpdateThought(){
-
+    this.service.thoughtUpdate(this.thoughts).subscribe(() => {
+      this.router.navigate(['/ListaPensamentos'])
+    })
   }
 
   cancelThought(){
-
+    this.router.navigate(['/ListaPensamentos'])
   }
 
 }
