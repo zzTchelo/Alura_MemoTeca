@@ -11,6 +11,8 @@
   </div>
 </section>
 
+<app-load-more-button [existsMoreThoughts]="existsMoreThoughts" (click) = "loadMore()"></app-load-more-button>
+
 <ng-template #semPensamentos>
   <div class="ff-inter sem-pensamentos">
     <p>Você ainda não cadastrou pensamentos!</p>

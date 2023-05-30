@@ -3,13 +3,23 @@
     <h2>Adicione <br> novos Pensamentos</h2>
   </header>
   <form action="" [formGroup]="form">
+
     <label for="pensamento">Pensamentos</label>
     <input type="textarea" class="input" formControlName="conteudo" id="pensamento"
     placeholder="Digite seus pensamentos...">
+    <div class="mensagem__erro" *ngIf="form.get('conteudo')?.errors && form.get('conteudo')?.touched">
+      *Pensamento obrigatório!!!
+    </div>
 
     <label for="autoria">Autoria/Fonte</label>
     <input type="text" class="input" formControlName="autoria" id="autoria"
     placeholder="Autoria/Fonte">
+    <div class="mensagem__erro" *ngIf="form.get('autoria')?.errors?.['required'] && form.get('autoria')?.touched ">
+      *Autor obrigatório!!!
+    </div>
+    <div class="mensagem__erro" *ngIf="form.get('autoria')?.errors?.['minlength'] && form.get('autoria')?.touched">
+      *Autor precisa ter ao menos três caracteres!!!
+    </div>
 
     <label for="modelo">Selecione o modelo do Card</label>
     <div class="container-radio">
@@ -63,7 +73,7 @@
     </div>
 
     <div class="acoes">
-      <button (click)="CreateThought()" class="botao">Salvar</button>
+      <button [disabled]="!form.valid" (click)="CreateThought()" [ngClass]="enableButton()">Salvar</button>
       <button (click)="cancelThought()" class="botao">Cancelar</button>
     </div>
   </form>

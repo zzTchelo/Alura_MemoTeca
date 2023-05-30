@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { thought } from '../thought';
 import { ThoughtService } from '../thought.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-thought',
@@ -21,19 +21,37 @@ export class CreateThoughtComponent {
 
   ngOnInit(): void {
     this.form = this.formbuilder.group({
-      conteudo : ['Digite seus pensamentos...'],
-      autoria : ['By autor'],
+      conteudo : ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/)
+      ])],
+      autoria : ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(3)
+      ])],
       modelo : ['modelo1']
     })
   }
 
   CreateThought(){
-    this.service.thoughtCreate(this.form.value).subscribe(() => {
-      this.router.navigate(['/ListaPensamentos'])
-    })
+    console.log(this.form.valid)
+    if (this.form.valid){
+      this.service.thoughtCreate(this.form.value).subscribe(() => {
+        this.router.navigate(['/ListaPensamentos'])
+      })
+    }
   }
 
   cancelThought(){
     this.router.navigate(['/ListaPensamentos'])
   }
+
+  enableButton(): string {
+    if(this.form.valid){
+      return 'botao'
+    } else {
+      return 'botao__desabilitado'
+    }
+  }
+
 }
