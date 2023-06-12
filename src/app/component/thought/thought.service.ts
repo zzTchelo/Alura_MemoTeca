@@ -14,11 +14,15 @@ export class ThoughtService {
     private http : HttpClient
   ) { }
 
-  thoughtList(page : number) : Observable<thought[]>{
+  thoughtList(page : number, filter : string) : Observable<thought[]>{
     const itens = 6;
     let params = new HttpParams()
       .set("_page", page)
       .set("_limit", itens)
+
+      if (filter.trim().length > 2){
+        params = params.set("q", filter)
+      }
 
     //GET /posts?_page=7&_limit=20
     //return this.http.get<thought[]>(`?{this.API}?_page=${page}&_limit=${itens}`)

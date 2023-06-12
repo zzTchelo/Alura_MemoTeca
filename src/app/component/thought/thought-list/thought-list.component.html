@@ -1,5 +1,10 @@
 <section class="container">
   <header class="header d-flex">
+    <div class="buscar-pensamentos">
+      <input type="search" class="filtro" placeholder="O que você procura?" autofocus [(ngModel)]="filter" (keyup)="searchThoughts()">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
     <h2 class="ff-inter">Meu Mural</h2>
     <button routerLink="/NovoPensamento" class="botao">Novo Pensamento</button>
   </header>
