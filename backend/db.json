@@ -4,43 +4,50 @@
       "id": 1,
       "conteudo": "Esse mês não tem feriado :(",
       "autoria": "By JM ;)",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": true
     },
     {
       "id": 2,
       "conteudo": "Serase eu trancar a faculdade",
       "autoria": "By JM",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": 3,
       "conteudo": "Sdds dela",
       "autoria": "By JM",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": true
     },
     {
+      "id": 4,
       "conteudo": "Digite seus pensamentos...",
       "autoria": "By autor",
       "modelo": "modelo2",
-      "id": 4
+      "favorito": false
     },
     {
+      "id": 5,
       "conteudo": "Digite seus pensamentos...",
       "autoria": "By autor",
       "modelo": "modelo3",
-      "id": 5
+      "favorito": false
     },
     {
+      "id": 6,
       "conteudo": "Digite seus pensamentos...",
       "autoria": "By autor",
       "modelo": "modelo1",
-      "id": 6
+      "favorito": false
     },
     {
+      "id": 7,
       "conteudo": "Teste de Paginação",
       "autoria": "Pagination",
       "modelo": "modelo1",
-      "id": 7
+      "favorito": false
     }
   ]
 }

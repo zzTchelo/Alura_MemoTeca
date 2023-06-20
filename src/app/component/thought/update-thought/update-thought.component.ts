@@ -32,7 +32,8 @@ export class UpdateThoughtComponent {
           Validators.required,
           Validators.minLength(3)
         ])],
-        modelo: [thought.modelo]
+        modelo: [thought.modelo],
+        favorito: [thought.favorito]
       })
     })
   }

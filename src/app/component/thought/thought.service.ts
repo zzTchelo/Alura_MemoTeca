@@ -24,8 +24,6 @@ export class ThoughtService {
         params = params.set("q", filter)
       }
 
-    //GET /posts?_page=7&_limit=20
-    //return this.http.get<thought[]>(`?{this.API}?_page=${page}&_limit=${itens}`)
     return this.http.get<thought[]>(this.API, {params})
   }
 
@@ -46,5 +44,10 @@ export class ThoughtService {
   searchByID(id : number): Observable<thought>{
     const url = `${this.API}/${id}`
     return this.http.get<thought>(url)
+  }
+
+  stateFavorite(thought : thought) : Observable<thought>{
+    thought.favorito = !thought.favorito
+    return this.thoughtUpdate(thought)
   }
 }
