@@ -14,7 +14,7 @@ export class ThoughtService {
     private http : HttpClient
   ) { }
 
-  thoughtList(page : number, filter : string) : Observable<thought[]>{
+  thoughtList(page : number, filter : string, favorite : boolean) : Observable<thought[]>{
     const itens = 6;
     let params = new HttpParams()
       .set("_page", page)
@@ -22,6 +22,10 @@ export class ThoughtService {
 
       if (filter.trim().length > 2){
         params = params.set("q", filter)
+      }
+
+      if (favorite) {
+        params = params.set("favorito", true)
       }
 
     return this.http.get<thought[]>(this.API, {params})

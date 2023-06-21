@@ -19,28 +19,28 @@
       "conteudo": "Sdds dela",
       "autoria": "By JM",
       "modelo": "modelo3",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 4,
       "conteudo": "Digite seus pensamentos...",
       "autoria": "By autor",
       "modelo": "modelo2",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 5,
       "conteudo": "Digite seus pensamentos...",
       "autoria": "By autor",
       "modelo": "modelo3",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 6,
       "conteudo": "Digite seus pensamentos...",
       "autoria": "By autor",
       "modelo": "modelo1",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 7,

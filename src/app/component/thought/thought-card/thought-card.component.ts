@@ -1,5 +1,6 @@
+import { thought } from './../thought';
 import { Component, Input } from '@angular/core';
-import { thought } from '../thought';
+
 import { ThoughtService } from '../thought.service';
 
 @Component({
@@ -21,6 +22,9 @@ export class ThoughtCardComponent {
     favorito: false
   }
 
+  @Input() favoriteList : thought [] = []
+
+
   widthThought(): string{
     if(this.thought.conteudo.length > 255){
       return 'pensamento-g'
@@ -36,7 +40,9 @@ export class ThoughtCardComponent {
   }
 
   updateFavorite(): void{
-    this.service.stateFavorite(this.thought).subscribe();
+    this.service.stateFavorite(this.thought).subscribe(() => {
+      this.favoriteList.splice(this.favoriteList.indexOf(this.thought), 1)
+    });
   }
 }
 
